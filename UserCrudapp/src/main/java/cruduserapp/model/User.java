@@ -9,14 +9,9 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.Size;
-//import java.time.format.DateTimeFormatter;
-
-
-
-
 import org.springframework.format.annotation.DateTimeFormat;
 
-//import com.fasterxml.jackson.annotation.JsonFormat;
+
 import com.sun.istack.NotNull;
 
 @Entity
@@ -34,11 +29,6 @@ public class User {
 	private String lname;
 	
 	@NotNull
-//	@DateTimeFormat(pattern="yyyy-MM-dd")
-//	@DateTimeFormat(iso = DateTimeFormatter.ISO_LOCAL_DATE)
-//	@JsonFormat(pattern = "YYYY-MM-dd")
-	
-
     @Temporal(TemporalType.DATE)	
 	@DateTimeFormat(pattern="yyyy-MM-dd")
 	private Date birthday;
@@ -60,7 +50,6 @@ public class User {
 	public void setLname(String lname) {
 		this.lname = lname;
 	}
-//	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
 	public Date getBirthday() {
 		return birthday;
 	}
